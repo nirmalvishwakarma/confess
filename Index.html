@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>One Change</title>
+        <link rel="stylesheet" href="Index.css">
+        <!--Fonts-->
+        <link href="https://api.fontshare.com/v2/css?f[]=excon@500&display=swap" rel="stylesheet">
+        <link href="https://api.fontshare.com/v2/css?f[]=gambetta@400&f[]=general-sans@600&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <div class="box">
+                <div class="top">
+                    <h1>Love Letter💌</h1>
+                </div>
+                <hr style="height: 5px; width: 100%; background-color:  #C5A7E0;">
+                <div class="middle">
+                    <div class="mid-top">
+                        <span class="mid-top-text">Person Name</span>
+                    </div>
+                    <div class="mid-mid">
+                        <span class="letter" id="typewriter-text"></span>
+                    </div>
+                </div>
+                <div class="end">
+                    <span class="end-text">This is made By <span class="heart">&hearts;</span></span>
+                </div>
+            </div>
+        </div>
+        <audio id="keySound" src="https://cdn.pixabay.com/audio/2022/03/17/audio_0c8d45b34b.mp3"></audio>
+        <script>
+            const text = `mujhe nahi laga ki tu bhi pyaar karti hai, bhale tu kare ya naa kare main toh dil se karta hu, agar tu bhi karti hai toh bata de ya fir ese hi dost ki tarah rehet hai, oye sun main tujhe bakiyo ki tarah  itna kuch special feel toh kar nahi karwa sakta but jitna mere se ho sakta hai utna main kar sakta hu, aur haa main tujhe kahi dusro ki tarah chod ke toh nahi ja sakta, end tak sath dunga tera, and kabhi bhi sath nahi choduga tera, agar tujhe nahi aana reletionship mein toh thik hai aur thik se jawab dena iska haa yaa naa , ye ese hi nahi keh raha hu sachhi keh raha hu.`;
+
+            const output = document.getElementById("typewriter-text");
+            const sound = document.getElementById("keySound");
+            let index = 0;
+
+            function typeChar() {
+                if (index < text.length) {
+                    output.textContent += text.charAt(index);
+                    if (text.charAt(index) !== ' ') {
+                        sound.currentTime = 0;
+                        sound.play();
+                    }
+                    index++;
+                    setTimeout(typeChar, 80);
+                }
+            }
+
+            window.onload = typeChar;
+        </script>
+    </body>
+</html>
