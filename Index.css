@@ -5,7 +5,7 @@
 }
 
 .container{
-    height: fit-content;
+    height: auto;
     width: 100%;
     background-color: #C5A7E0;
     display: flex;
